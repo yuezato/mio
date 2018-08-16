@@ -667,7 +667,10 @@ impl Ready {
     }
 
     #[deprecated(since = "0.6.5", note = "use UnixReady instead")]
-    #[cfg(feature = "with-deprecated")]
+    #[cfg(all(
+        not(target_os = "windows"),
+        feature = "with-deprecated",
+    ))]
     #[doc(hidden)]
     #[inline]
     pub fn error() -> Ready {
@@ -675,7 +678,10 @@ impl Ready {
     }
 
     #[deprecated(since = "0.6.5", note = "use UnixReady instead")]
-    #[cfg(feature = "with-deprecated")]
+    #[cfg(all(
+        not(target_os = "windows"),
+        feature = "with-deprecated",
+    ))]
     #[doc(hidden)]
     #[inline]
     pub fn hup() -> Ready {
@@ -772,7 +778,10 @@ impl Ready {
     }
 
     #[deprecated(since = "0.6.5", note = "use UnixReady instead")]
-    #[cfg(feature = "with-deprecated")]
+    #[cfg(all(
+        not(target_os = "windows"),
+        feature = "with-deprecated",
+    ))]
     #[doc(hidden)]
     #[inline]
     pub fn is_error(&self) -> bool {
@@ -780,7 +789,10 @@ impl Ready {
     }
 
     #[deprecated(since = "0.6.5", note = "use UnixReady instead")]
-    #[cfg(feature = "with-deprecated")]
+    #[cfg(all(
+        not(target_os = "windows"),
+        feature = "with-deprecated",
+    ))]
     #[doc(hidden)]
     #[inline]
     pub fn is_hup(&self) -> bool {
